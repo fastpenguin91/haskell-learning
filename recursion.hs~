@@ -1,0 +1,19 @@
+maximum' :: (Ord a) => [a] -> a
+maximum' [] = error "maximum of empty list"
+maximum' [x] = x
+maximum' (x:xs)      -- take first elem of the list, put the rest into xs.
+    | x > maxTail = x     -- if x is bigger than "maxTail", then return x
+    | otherwise = maxTail     -- otherwise, return maxTail
+    where maxTail = maximum' xs  -- maxTail is equal to the tail of the list.
+
+
+    --maximum' [6, 4, 9, 2] = 6:[4, 9, 2], 6 > 4:[9,2] > 9:[2] > 2 ?????
+
+
+maximum'' :: (Ord a) => [a] -> a
+maximum'' [] = error "maximum of empty list"
+maximum'' [x] = x
+maximum'' (x:xs) = max x (maximum'' xs)
+
+
+-- A few more recursive functions

@@ -1,0 +1,29 @@
+
+boomBangs xs = [ if x < 10 then "BOOM!" else "BANG!" | x <- xs, odd x]
+-- boomBangs [2,4..100] returns empty list bbecause all are even.
+-- take list. If x less than 10 print BOOM, otherwise print BANG. Only do this for ODD numbers.
+
+
+
+
+
+
+
+
+
+
+
+-- [x*2 | x <- [1..10]] -- Set every value from 1-10 to x, return x*2
+
+--[x*2 | x <- [1..10], x*2 >= 12] -- Same as above only return values where x*2 greater than 12.
+
+-- [ x | x <- [50..100], x `mod` 7 == 3] -- Set x to numbers 50-100, return value when x divided by 7 gives a remainder of 3.
+
+
+
+-- [ x | x <- [10..20], x /= 13, x /= 15, x /= 19] -- set x for 10-20, return x when not 13, 15, or 19
+
+
+-- [ x*y | x <- [2,5,10], y <- [8,10,11], x*y > 50]
+
+myLength xs = [if x < 10 then x else x | x <- xs]
